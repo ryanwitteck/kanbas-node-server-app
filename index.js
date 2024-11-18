@@ -5,6 +5,7 @@ import cors from "cors";
 import UserRoutes from "./Kanbas/Users/routes.js";
 import session from "express-session";
 import "dotenv/config";
+import CourseRoutes from "./Kanbas/Courses/routes.js";
 
 const app = express();
 app.use(
@@ -32,4 +33,5 @@ app.use(express.json());
 UserRoutes(app);
 Lab5(app);
 Hello(app);
+CourseRoutes(app);
 app.listen(process.env.PORT || 4000);
