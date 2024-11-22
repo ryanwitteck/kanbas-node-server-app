@@ -2,7 +2,7 @@ export default [
   { 
     "_id": "A101", 
     "title": "Propulsion Assignment", 
-    "course": "RS101", 
+    "course": "673d2743717bd41618c54519", 
     "online_entry_type": { "text": true, "url": true, "media": false, "annotations": false, "file_upload": true }, 
     "submission_type": "INPERSON", 
     "display_grade_as": "DECIMAL", 

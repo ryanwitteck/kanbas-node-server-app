@@ -3,7 +3,7 @@ export default[
       "_id": "M101",
       "name": "Introduction to Rocket Propulsion",
       "description": "Basic principles of rocket propulsion and rocket engines.",
-      "course": "RS101",
+      "course": "673d2743717bd41618c54519",
       "lessons": [
         {
           "_id": "L101",
