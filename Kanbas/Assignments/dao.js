@@ -1,4 +1,6 @@
 import model from "./model.js";
+import mongoose from "mongoose";
+
 export function findAssignmentsForCourse(courseId) {
   return model.find({ course: courseId });
 }
@@ -9,9 +11,11 @@ export function createAssignment(assignment) {
 }
 
 export function deleteAssignment(assignmentId) {
-  return model.deleteOne({ _id: assignmentId });
+  const objectId = new mongoose.Types.ObjectId(assignmentId);
+  return model.deleteOne({ _id: objectId });
 }
 
 export function updateAssignment(assignmentId, assignmentUpdates) {
-  return model.updateOne({ _id: assignmentId }, assignmentUpdates);
+  const objectId = new mongoose.Types.ObjectId(assignmentId);
+  return model.updateOne({ _id: objectId }, assignmentUpdates);
 }

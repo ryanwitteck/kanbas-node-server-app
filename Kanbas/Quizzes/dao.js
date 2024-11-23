@@ -13,9 +13,11 @@ export function createQuiz(quiz) {
 }
 
 export function deleteQuiz(quizId) {
-  return model.deleteOne({ _id: quizId });
+  const objectId = new mongoose.Types.ObjectId(quizId);
+  return model.deleteOne({ _id: objectId });
 }
 
 export function updateQuiz(quizId, quizUpdates) {
-  return model.updateOne({ _id: quizId }, quizUpdates);
+  const objectId = new mongoose.Types.ObjectId(quizId);
+  return model.updateOne({ _id: objectId }, quizUpdates);
 }
