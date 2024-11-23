@@ -18,6 +18,6 @@ export default function AssignmentRoutes(app) {
       assignmentId,
       assignmentUpdates
     );
-    res.json(status);
+    res.send(status);
   });
 }
