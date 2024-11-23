@@ -3,6 +3,10 @@ const schema = new mongoose.Schema(
   {
     title: String,
     description: String,
+    published: {
+      type: Boolean,
+      default: false,
+    },
     quiz_type: {
       type: String,
       enum: ["GRADED", "PRACTICE", "SURVEY", "UNGRADED"],
@@ -12,18 +16,45 @@ const schema = new mongoose.Schema(
     group: {
       type: String,
       enum: ["EXAMS", "PROJECT", "ASSIGNMENTS", "QUIZZES"],
-      default: "ASSIGNMENTS",
+      default: "QUIZZES",
     },
     most_recent_score: Number,
-    shuffle: Boolean,
-    time_limit: Number,
-    multiple_attemps: Boolean,
-    attempt_count: Number,
-    show_correct_answers: Boolean,
-    access_code: Boolean,
-    one_question_at_a_time: Boolean,
-    webcam_required: Boolean,
-    lock_questions_after_answering: Boolean,
+    shuffle: {
+      type: Boolean,
+      default: true,
+    },
+    time_limit:  {
+      type: Number,
+      default: 20,
+    },
+    multiple_attemps: {
+      type: Boolean,
+      default: false,
+    },
+    attempt_count: {
+      type: Number,
+      default: 1,
+    },
+    show_correct_answers:  {
+      type: Boolean,
+      default: true,
+    },
+    access_code: {
+      type: String,
+      default: "",
+    },
+    one_question_at_a_time: {
+      type: Boolean,
+      default: true,
+    },
+    webcam_required: {
+      type: Boolean,
+      default: false,
+    },
+    lock_questions_after_answering: {
+      type: Boolean,
+      default: false,
+    },
     available_start: String,
     available_end: String,
     due_date: String,
