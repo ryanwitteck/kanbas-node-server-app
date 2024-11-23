@@ -27,7 +27,7 @@ const schema = new mongoose.Schema(
       type: Number,
       default: 20,
     },
-    multiple_attemps: {
+    multiple_attempts: {
       type: Boolean,
       default: false,
     },
@@ -39,6 +39,7 @@ const schema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
+    correct_answer_release_date: String,
     access_code: {
       type: String,
       default: "",
