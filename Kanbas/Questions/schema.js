@@ -7,7 +7,7 @@ const schema = new mongoose.Schema(
     group: {
         type: String,
         enum: ["MULTIPLE", "TF", "FILL_IN"],
-        default: "TF",
+        default: "MULTIPLE",
       },
     multiple_answers_array: [String],
     multiple_answers_answer: String,
