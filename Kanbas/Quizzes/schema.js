@@ -37,7 +37,7 @@ const schema = new mongoose.Schema(
     },
     show_correct_answers:  {
       type: Boolean,
-      default: true,
+      default: false,
     },
     correct_answer_release_date: String,
     access_code: {

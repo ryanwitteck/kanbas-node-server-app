@@ -10,16 +10,20 @@ import ModuleRoutes from "./Kanbas/Modules/routes.js";
 import AssignmentRoutes from "./Kanbas/Assignments/routes.js";
 import EnrollmentRoutes from "./Kanbas/Enrollments/routes.js";
 import QuizzesRoutes from "./Kanbas/Quizzes/routes.js";
+import QuestionsRoutes from "./Kanbas/Questions/routes.js";
+
 import mongoose from "mongoose";
 import "dotenv/config";
 
-const CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING
+const CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING;
 mongoose.connect(CONNECTION_STRING);
 const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: process.env.NETLIFY_URL || "https://kanbas-react-web-app-ryanwitteck.netlify.app"
+    origin:
+      process.env.NETLIFY_URL ||
+      "https://kanbas-react-web-app-ryanwitteck.netlify.app",
   })
 );
 const sessionOptions = {
@@ -46,4 +50,5 @@ ModuleRoutes(app);
 AssignmentRoutes(app);
 EnrollmentRoutes(app);
 QuizzesRoutes(app);
+QuestionsRoutes(app);
 app.listen(process.env.PORT || 4000);
