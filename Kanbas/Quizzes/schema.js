@@ -56,6 +56,7 @@ const schema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    number_of_questions: Number,
     available_start: String,
     available_end: String,
     due_date: String,
