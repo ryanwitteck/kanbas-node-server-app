@@ -8,6 +8,7 @@ const scoreSchema = new mongoose.Schema(
         questionId: { type: String },
         answer: String,
       }],
+    attempt: {type: Number, default: 1},
 
   },
   { collection: "scores" }
