@@ -21,6 +21,16 @@ export default function ScoreRoutes(app) {
     const status = await dao.findScoresForUser(uid, qid);
     res.json(status);
   };
+
+  const getScoresByUser = async (req, res) => {
+    let { uid } = req.params;
+    if (uid === "current") {
+      const currentUser = req.session["currentUser"];
+      uid = currentUser._id;
+    }
+    const status = await dao.findScoresByUser(uid);
+    res.json(status);
+  };
   const insertScoreForUser = async (req, res) => {
     const { uid, qid, tally } = req.params;
     const score = {
@@ -39,5 +49,7 @@ export default function ScoreRoutes(app) {
   };
 
   app.get("/api/users/:uid/scores/:qid", getScoreForUser);
+  app.get("/api/users/:uid/scores", getScoresByUser);
+
   app.post("/api/users/:uid/scores/:qid/:tally", insertScoreForUser);
 }

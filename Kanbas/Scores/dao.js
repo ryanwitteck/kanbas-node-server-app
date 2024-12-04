@@ -13,3 +13,7 @@ export function updateScore(scoreId, scoreUpdate) {
   const objectId = new mongoose.Types.ObjectId(scoreId);
   return model.updateOne({ _id: objectId }, scoreUpdate);
 }
+
+export function findScoresByUser(userId) {
+  return model.find({ user: new mongoose.Types.ObjectId(userId) });
+}
